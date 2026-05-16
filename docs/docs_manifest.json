@@ -237,8 +237,8 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "c34726b8a72b7740c474cdd98eadbb36042d68c93e304f18aa3b71bd33e94096",
-      "last_updated": "2026-05-15T02:56:16.457345",
+      "hash": "533c03ad4a5f3c828029bdc1e3cecf8eae89b0a725c9e5b01fc523762b1c8f23",
+      "last_updated": "2026-05-16T02:45:06.971274",
       "source": "claude-code-repository"
     },
     "channels.md": {
@@ -274,8 +274,8 @@
     "claude-directory.md": {
       "original_url": "https://code.claude.com/docs/en/claude-directory",
       "original_md_url": "https://code.claude.com/docs/en/claude-directory.md",
-      "hash": "2e9bb1e980355ca725577cfe7a35b2d5f315bbff0c8d0407039daf39b3f46ad8",
-      "last_updated": "2026-05-12T04:14:31.195465"
+      "hash": "d3d03851ea0e5eb5ed597d633f0cceaf5f308f5b2a9a27e228951283e8b9f075",
+      "last_updated": "2026-05-16T02:44:18.425305"
     },
     "claude-platform-on-aws.md": {
       "original_url": "https://code.claude.com/docs/en/claude-platform-on-aws",
@@ -334,8 +334,8 @@
     "data-usage.md": {
       "original_url": "https://code.claude.com/docs/en/data-usage",
       "original_md_url": "https://code.claude.com/docs/en/data-usage.md",
-      "hash": "b1a1eff53569b28d2f483e0918ce13d7239cb33ae147feb5911cb0bdba6234bf",
-      "last_updated": "2026-05-12T18:31:56.452096"
+      "hash": "79c533f68cbda4cbd26b259655cf3f733b939614b7828339d65949529fda8630",
+      "last_updated": "2026-05-16T02:44:24.059866"
     },
     "debug-your-config.md": {
       "original_url": "https://code.claude.com/docs/en/debug-your-config",
@@ -394,8 +394,8 @@
     "errors.md": {
       "original_url": "https://code.claude.com/docs/en/errors",
       "original_md_url": "https://code.claude.com/docs/en/errors.md",
-      "hash": "983882df4b947dede26f7f88054392aefa6bd7ef0f272ff98574466d2ef57885",
-      "last_updated": "2026-05-10T04:19:33.120442"
+      "hash": "68e3f51004f8838c145e031108d4be28c1a566a8c75267745050e811e542895b",
+      "last_updated": "2026-05-16T02:44:29.682384"
     },
     "fast-mode.md": {
       "original_url": "https://code.claude.com/docs/en/fast-mode",
@@ -795,8 +795,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-05-15T21:59:38.554703",
-    "fetch_duration_seconds": 77.485069,
+    "last_fetch_completed": "2026-05-16T02:45:06.971330",
+    "fetch_duration_seconds": 74.414255,
     "total_pages_discovered": 132,
     "pages_fetched_successfully": 133,
     "pages_failed": 0,
@@ -806,7 +806,7 @@
     "total_files": 132,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-05-15T21:59:38.554727",
+  "last_updated": "2026-05-16T02:45:06.971357",
   "base_url": "https://raw.githubusercontent.com/moonlightsh/claude-code-docs/main/docs/",
   "github_repository": "moonlightsh/claude-code-docs",
   "github_ref": "main",
