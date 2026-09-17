@@ -1557,7 +1557,7 @@ Claude Code also writes `true` here when you choose to block such reads on [auto
 }
 ```
 
-If only a repository's checked-in settings file adds a directory, the block still applies to reads there. Files Claude Code itself needs stay readable, such as your skills, plugins, rules, agents, commands, and the `CLAUDE.md` memory file under `~/.claude/`.
+If only a repository's checked-in settings file adds a directory, the block still applies to reads there. When [`autoMemoryDirectory`](#automemorydirectory) comes from the project's `.claude/settings.json`, or from a `.claude/settings.local.json` [treated as repository-supplied](/docs/en/permissions#when-your-local-settings-file-needs-trust), Claude Code loads no [auto memory](/docs/en/memory#storage-location) from that directory and saves none to it. Files Claude Code itself needs stay readable, such as your skills, plugins, rules, agents, commands, and the `CLAUDE.md` memory file under `~/.claude/`.
 
 When the [sandbox](/docs/en/sandboxing) is on, the block also denies sandboxed commands read access to home directories and mounted-volume roots outside the working directories. A retry that needs approval to [run outside the sandbox](/docs/en/sandboxing#the-unsandboxed-retry-escape-hatch) prompts you even in `bypassPermissions` mode. Files a tool reads from your home directory, such as `~/.gitconfig`, are denied with the rest; re-open a specific path with [`sandbox.filesystem.allowRead`](#sandbox-filesystem-allowread) when a tool needs it.
 
@@ -2933,7 +2933,7 @@ Appears in `/config` as **Auto-scroll** when fullscreen rendering is on, which w
 
 ### `axScreenReader`
 
-Render screen-reader friendly output: flat text without decorative borders or animations. Screen-reader mode uses the classic renderer, so the `tui` setting has no effect while it is active; attached [background sessions](/docs/en/agent-view) still render fullscreen. Requires Claude Code v2.1.181 or later.
+Render screen-reader friendly output: flat text without decorative borders or animations. Screen-reader mode uses the classic renderer, so the `tui` setting has no effect while it is active; attached [background sessions](/docs/en/agent-view) still render fullscreen.
 
 * **Scope**: [`Any file`](#scopes)
 * **Type**: Boolean
@@ -2947,8 +2947,6 @@ Render screen-reader friendly output: flat text without decorative borders or an
   "axScreenReader": true
 }
 ```
-
-Requires Claude Code v2.1.181 or later.
 
 ### `bashEditDiffEnabled`
 
