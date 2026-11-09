@@ -1365,8 +1365,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-11-08T19:21:12.777635",
-    "fetch_duration_seconds": 126.86064,
+    "last_fetch_completed": "2026-11-09T00:32:45.171026",
+    "fetch_duration_seconds": 126.535829,
     "total_pages_discovered": 227,
     "pages_fetched_successfully": 228,
     "pages_failed": 0,
@@ -1376,7 +1376,7 @@
     "total_files": 227,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-11-08T19:21:12.777672",
+  "last_updated": "2026-11-09T00:32:45.171061",
   "base_url": "https://raw.githubusercontent.com/moonlightsh/claude-code-docs/main/docs/",
   "github_repository": "moonlightsh/claude-code-docs",
   "github_ref": "main",
