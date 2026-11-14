@@ -502,8 +502,8 @@
     "desktop.md": {
       "original_url": "https://code.claude.com/docs/en/desktop",
       "original_md_url": "https://code.claude.com/docs/en/desktop.md",
-      "hash": "06d179439eeaabd5c2ec13833ad9c364e93dc40e08ad951553292f0cf4c7e283",
-      "last_updated": "2026-11-14T04:54:58.856557"
+      "hash": "62babc490508d4d53ed58c8887630131bcf392c0a31e53e81ed8f10dac0b74ac",
+      "last_updated": "2026-11-14T12:57:37.914473"
     },
     "desktop-ios-simulator.md": {
       "original_url": "https://code.claude.com/docs/en/desktop-ios-simulator",
@@ -1221,8 +1221,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-11-14T04:56:10.167562",
-    "fetch_duration_seconds": 123.153642,
+    "last_fetch_completed": "2026-11-14T12:58:42.040054",
+    "fetch_duration_seconds": 109.045622,
     "total_pages_discovered": 203,
     "pages_fetched_successfully": 204,
     "pages_failed": 0,
@@ -1232,7 +1232,7 @@
     "total_files": 203,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-11-14T04:56:10.167585",
+  "last_updated": "2026-11-14T12:58:42.040083",
   "base_url": "https://raw.githubusercontent.com/moonlightsh/claude-code-docs/main/docs/",
   "github_repository": "moonlightsh/claude-code-docs",
   "github_ref": "main",
