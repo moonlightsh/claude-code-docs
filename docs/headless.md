@@ -58,7 +58,7 @@ In bare mode Claude has access to the Bash, file read, and file edit tools. Pass
 | [Custom agents](https://code.claude.com/docs/en/sub-agents.md#choose-the-subagent-scope) | `--agents <file-or-json>` |
 | A plugin | `--plugin-dir <path>`, `--plugin-url <url>` |
 
-Hooks still don't run in bare mode when you pass them with `--settings`, or in the [`hooks/hooks.json`](https://code.claude.com/docs/en/plugins/components#hooks) or [`hooks` manifest key](https://code.claude.com/docs/en/plugins/manifest-reference#hooks) of a plugin you load with a flag. Don't use bare mode for a run that needs them.
+Hooks still don't run in bare mode when you pass them with `--settings`, or in the [`hooks/hooks.json`](https://code.claude.com/docs/en/plugins/components#hooks) or [`hooks` manifest key](https://code.claude.com/docs/en/plugins/manifest-reference#hooks) of a plugin you load with a flag. [Agent SDK hook callbacks](https://code.claude.com/docs/en/agent-sdk/hooks.md) don't run either. Don't use bare mode for a run that needs these hooks.
 
 Bare mode also limits what happens while the session runs:
 
@@ -70,7 +70,7 @@ Before v2.1.286, these limits held only partly: an interactive `--bare` session 
 
 > [!NOTE]
 >
-> `--bare` is the recommended mode for scripted and SDK calls, and will become the default for `-p` in a future release.
+> `--bare` is the recommended mode for scripted and SDK calls that don't need hooks, and will become the default for `-p` in a future release.
 
 ### Background tasks at exit
 
@@ -281,7 +281,7 @@ Use the plugin fields in the `system/init` event to catch a plugin that didn't l
 | Field | Type | Description |
 | - | - | - |
 | `plugins` | array | plugins that loaded successfully, each with `name` and `path` |
-| `plugin_errors` | array | plugin load-time errors, each with `plugin`, `type`, and `message`. Includes unsatisfied dependency versions and `--plugin-dir` load failures such as a missing path or invalid archive. A plugin that didn't load is absent from `plugins`. The key is omitted when there are no errors |
+| `plugin_errors` | array | plugin load-time errors, each with `plugin`, `type`, and `message`. Includes unsatisfied dependency versions and `--plugin-dir` load failures such as a missing path or invalid archive. The key is omitted when there are no errors |
 
 When a `--plugin-dir` directory or archive itself fails to load, its `plugin_errors` entry includes the resolved absolute path as `path`. Use it to tell which of several `--plugin-dir` values failed. The `path` field requires Claude Code v2.1.283 or later.
 

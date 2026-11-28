@@ -369,7 +369,7 @@ If something is missing, work through [Test and debug](#test-and-debug).
 
 While the originals are still under `.claude/`, they stay loaded alongside the plugin's copies:
 
-* **Skills and agents**: the two sets don't collide, because the plugin's skills and agents carry the `my-plugin:` prefix. `/deploy` and `/my-plugin:deploy` both work, and Claude sees `reviewer` and `my-plugin:reviewer` as two subagents.
+* **Skills and agents**: the plugin's skills and agents carry the `my-plugin:` prefix. `/deploy` and `/my-plugin:deploy` both work, and Claude sees `reviewer` and `my-plugin:reviewer` as two subagents.
 * **Hooks**: hooks have no prefix, so a hook that is in both your settings file and `hooks/hooks.json` runs twice each time its event fires.
 
 After you've confirmed the plugin works, delete the originals from `.claude/` and remove the `hooks` object from your settings file.

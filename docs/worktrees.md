@@ -141,7 +141,10 @@ Apply the requested refactor across every affected file, then run the tests
 and report the results.
 ```
 
-When a subagent finishes, Claude Code keeps the worktree if git shows changed files, untracked files, or new commits there. Otherwise, Claude Code can remove the worktree right away. A kept worktree stays on disk until the [periodic sweep](#clean-up-subagent-and-background-session-worktrees) can remove it without losing work. For a worktree your [WorktreeCreate hook](https://code.claude.com/docs/en/hooks.md#worktreecreate) created, see [WorktreeRemove](https://code.claude.com/docs/en/hooks.md#worktreeremove) instead.
+If your [WorktreeCreate hook](https://code.claude.com/docs/en/hooks.md#worktreecreate) created the subagent's worktree, see [WorktreeRemove](https://code.claude.com/docs/en/hooks.md#worktreeremove). Otherwise, Claude Code checks the worktree with git when the subagent finishes:
+
+* **Changed files, untracked files, or new commits**: the worktree stays until it qualifies for the [periodic sweep](#clean-up-subagent-and-background-session-worktrees).
+* **A clean `git status` and no new commits**: Claude Code can remove the worktree right away.
 
 Subagent worktrees use the same [base branch](#choose-the-base-branch) as `--worktree`, so they branch from your repository's default branch unless `worktree.baseRef` is set to `"head"`.
 
@@ -173,7 +176,7 @@ Claude Code's defaults for creating worktrees cover most sessions: it creates th
 
 ### Choose the base branch
 
-New worktrees branch from the repository's default branch, so most sessions don't need this setting. Set `worktree.baseRef` in [settings](https://code.claude.com/docs/en/settings-reference.md#worktree) to branch from your current work instead. The setting accepts two values:
+New worktrees branch from the repository's default branch. Set `worktree.baseRef` in [settings](https://code.claude.com/docs/en/settings-reference.md#worktree) to branch from your current work instead. The setting accepts two values:
 
 * `"fresh"` (default): branch from the repository's default branch on the remote, usually `main`, so the worktree starts from a clean tree matching the remote.
 * `"head"`: branch from your current local `HEAD`, so the worktree carries your unpushed commits and feature-branch state. Use this when isolating subagents that need to operate on in-progress work. Inside a worktree, `"head"` resolves to that worktree's `HEAD`, not the main checkout's.

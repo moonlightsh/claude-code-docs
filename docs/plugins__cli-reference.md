@@ -34,7 +34,7 @@ In a terminal, success lines leave out `Successfully`, as in `Installed plugin:`
 
 ### plugin init
 
-Scaffold a new plugin at `~/.claude/skills/<name>/`. Unless your administrator has [blocked skills-directory plugins](https://code.claude.com/docs/en/plugins/loading.md#skills-directory-plugins-blocked-by-managed-settings), it loads in your next session as `<name>@skills-dir` with no install step.
+Scaffold a new plugin at `~/.claude/skills/<name>/`. Unless your administrator has [blocked skills-directory plugins](https://code.claude.com/docs/en/plugins/loading.md#skills-directory-plugins-blocked-by-managed-settings), it loads in your next session as `<name>@skills-dir`.
 
 `new` is an alias for `init`.
 
@@ -694,7 +694,7 @@ On exit `2`, the command writes nothing to stdout. The error message goes to std
 
 #### Advice on the README
 
-An `Advice` block in the output of `claude plugin validate` means a plugin's README has no line that installs the plugin from a marketplace, and it gives you a line to add. Advice isn't an error or a warning. It doesn't change the verdict line or the exit code, with or without `--strict`. It requires Claude Code v2.1.295 or later.
+An `Advice` block in the output of `claude plugin validate` means a plugin's README has no line that installs the plugin from a marketplace, and it gives you a line to add. Advice isn't an error or a warning. It requires Claude Code v2.1.295 or later.
 
 For example, validating the `acme-tools` marketplace's directory prints this advice for its `deploy-helper` plugin:
 

@@ -73,7 +73,7 @@ Go to [claude.ai/code/routines](https://claude.ai/code/routines) and click **New
 * If a menu opens with **Create with Claude** and **Set up manually**, select **Set up manually** to open the dialog. **Create with Claude** lets you describe the task in a chat and have Claude create it instead.
 * If a full page opens in place of the dialog, go to [Full-page form](#full-page-form).
 
-If **Repositories** and **Environment** are already showing when the dialog opens, see [how that dialog differs](#dialog-with-repositories-and-environment-in-the-main-view). Otherwise, this dialog also creates scheduled tasks for claude.ai chat. To make yours what the dialog calls a Claude Code task, select a repository or add a GitHub event or API trigger in the steps that follow. That kind of task runs Claude Code in a cloud session.
+If **Repositories** and **Environment** are already showing when the dialog opens, see [how that dialog differs](#dialog-with-repositories-and-environment-in-the-main-view).
 
 **2. Name the task and write the prompt**
 
@@ -100,6 +100,10 @@ In the **Trigger** row, choose how the task starts. To combine several triggers,
 **4. Select repositories**
 
 In the **Repository** row below **Trigger**, select one or more GitHub repositories for Claude to work in. If the row isn't there, expand **Advanced settings** and find **Repository** on the **General** tab.
+
+> [!NOTE]
+>
+> If the row says **Picking a repository makes this a Claude Code task**, select a repository so the task runs Claude Code in a [cloud session](https://code.claude.com/docs/en/claude-code-on-the-web.md). If you skip the repository in that case and add only a schedule trigger, you create a scheduled task for claude.ai chat.
 
 Each repository is cloned at the start of a run. Claude creates `claude/`-prefixed branches for its changes.
 
@@ -509,6 +513,10 @@ If the cause is your CLI sign-in or being inside a cloud session, you can still 
 ### Scheduled tasks are off for your organization
 
 Cloud scheduled tasks are off for your organization, and you can't change that from your local configuration. Ask your Team or Enterprise Owner whether they can turn on the **Scheduled tasks (Was Routines)** or **Routines** toggle at [**Organization settings > Capabilities > Remote sessions**](https://claude.ai/admin-settings/capabilities).
+
+### A scheduled task turned off with a usage credits notice
+
+If a task's model [requires usage credits](https://code.claude.com/docs/en/model-config.md#fable-and-usage-credits) on your plan, claude.ai can skip the next run and turn the task off. On the task's [detail page](#edit-and-control-scheduled-tasks), turn the task back on to use usage credits, or change its model before you turn it on.
 
 ### Warnings under History
 

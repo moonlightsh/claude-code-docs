@@ -1435,7 +1435,7 @@ Logged when all hooks for a hook event have finished.
 
 #### Hook plugin metrics event
 
-Logged when an official-marketplace plugin hook emits per-invocation metrics. Only plugins installed from an official Anthropic marketplace can emit these. Third-party marketplace plugins and user-configured hooks don't emit to this event. Use this event to monitor plugin behavior such as finding rates, costs, and durations from your own observability stack.
+Logged when an official-marketplace plugin hook emits per-invocation metrics. Only plugins installed from an official Anthropic marketplace can emit these. Use this event to monitor plugin behavior such as finding rates, costs, and durations from your own observability stack.
 
 **Event Name**: `claude_code.hook_plugin_metrics`
 

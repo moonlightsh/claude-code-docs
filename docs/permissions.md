@@ -467,8 +467,6 @@ The following example shows each pattern shape against a project with a top-leve
 
 #### Special characters and `!` negation
 
-When you approve a file path with "Yes, and don't ask again", Claude Code escapes gitignore pattern characters in that path, such as `[`, `]`, and `*`, so the generated rule matches only the literal path you approved. Rules you write yourself aren't escaped.
-
 Claude Code reads the paths you write as gitignore patterns:
 
 * **Parentheses**: `Edit(./Finance (2024)/**)` matches the `Finance (2024)` folder as spelled.

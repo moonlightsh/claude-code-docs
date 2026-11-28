@@ -254,7 +254,7 @@ On macOS and Linux, Claude Code also refuses to create the socket in a directory
 
 Alongside the socket's path, Claude Code exports a per-session token as [`CLAUDE_CODE_MESSAGING_TOKEN`](https://code.claude.com/docs/en/env-vars#variables). A script posting to its own session's socket can send `{"type":"auth","token":"<token>"}` as the first line of its connection, where `<token>` is the value of `CLAUDE_CODE_MESSAGING_TOKEN`. Whether Claude Code requires the line depends on the platform:
 
-* **macOS and Linux, including WSL 2**: the line is optional. Claude Code accepts a connection with or without it.
+* **macOS and Linux, including WSL 2**: the line is optional.
 * **Native Windows**: the line is required. Claude Code closes any connection whose first line isn't a valid auth line and delivers nothing from that connection.
 
 Open the connection only when the message you're posting is ready. Claude Code closes a connection that hasn't sent a complete line within 30 seconds, so capture a slow command's output first and then open the connection to send it.

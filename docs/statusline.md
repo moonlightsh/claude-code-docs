@@ -410,7 +410,7 @@ The table lists each field with its meaning. Timestamps are Unix epoch seconds, 
 | `misses` | Requests that re-processed content the cache already held: more than 5% and at least 2,000 tokens of what the request could have read from cache, with no compaction or tool-result clearing to explain the shortfall in cache reads |
 | `expected_rebuilds` | Cache rebuilds that followed a compaction or a clearing of old tool results |
 | `hit_ratio` | Cache read tokens as a fraction of all input tokens this session, from 0 to 1. The denominator counts cache reads, cache writes, and uncached input. `null` while those counts are all zero |
-| `cache_write_tokens` | All tokens written to the cache this session, the first request's initial write included |
+| `cache_write_tokens` | All tokens written to the cache this session |
 | `miss_recache_tokens` | Tokens written to the cache by the requests counted as misses |
 | `last_miss_at` | When the last miss happened, in epoch seconds. `null` while the session has no misses |
 | `last_miss_cause` | What Claude Code identified as the likely cause of the last miss, described under [Last miss cause](#last-miss-cause). Requires Claude Code v2.1.260 or later |
@@ -436,7 +436,7 @@ These examples show common status line patterns. To use any example:
 2. Make it executable: `chmod +x ~/.claude/statusline.sh`
 3. Add the path to your [settings](#manually-configure-a-status-line)
 
-The Bash examples use [`jq`](https://jqlang.org/) to parse JSON. Python and Node.js have built-in JSON parsing.
+The Bash examples use [`jq`](https://jqlang.org/) to parse JSON.
 
 ### Context window usage
 

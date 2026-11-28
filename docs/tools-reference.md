@@ -162,7 +162,7 @@ Activate your virtualenv or conda environment before launching Claude Code. To m
 
 ### Timeout and output limits
 
-Each command runs under a timeout, and Claude manages it: when it wants longer than the default for a command, it passes the `timeout` parameter with that call. You never set a per-command timeout.
+Each command runs under a timeout, and Claude manages it: when it wants longer than the default for a command, it passes the `timeout` parameter with that call.
 
 Two [environment variables](https://code.claude.com/docs/en/env-vars.md) control what Claude gets for a command that runs in the foreground:
 
@@ -257,7 +257,7 @@ Whatever you list, these rules apply:
 
 ## Edit tool behavior
 
-The Edit tool performs exact string replacement. It takes an `old_string` and a `new_string` and replaces the first with the second. It doesn't use regex or fuzzy matching.
+The Edit tool performs exact string replacement. It takes an `old_string` and a `new_string` and replaces the first with the second.
 
 These checks must pass for an edit to apply. Before any of them, a path matched by a [`Read` deny rule](https://code.claude.com/docs/en/permissions#tool-specific-permission-rules) is refused, including creating a new file there.
 
@@ -447,7 +447,7 @@ The ask rule, and a deny rule you add during a session, cover these watches in C
 
 ## NotebookEdit tool behavior
 
-NotebookEdit modifies a Jupyter notebook one cell at a time, targeting cells by their `cell_id`. It doesn't perform string replacement across the notebook the way [Edit](#edit-tool-behavior) does on plain files.
+NotebookEdit modifies a Jupyter notebook one cell at a time, targeting cells by their `cell_id`.
 
 Three edit modes control what happens to the target cell:
 

@@ -378,6 +378,7 @@ Press `?` in agent view to see shortcuts in context. The table below summarizes 
 | `Esc` | Close the peek panel, clear the input, or exit. On Claude Code v2.1.323 or later, clearing a prompt takes two presses. When you opened agent view by backgrounding your session with `←`, the final `Esc` returns to that conversation instead of exiting. With [vim editor mode](https://code.claude.com/docs/en/interactive-mode.md#vim-editor-mode) on, pressing `Esc` in the input switches from INSERT to NORMAL mode and keeps your text, as in the main prompt |
 | `Ctrl+Y` | In the dispatch input, restore the text you last cleared, or removed with `Ctrl+K`, `Ctrl+U`, or `Ctrl+W`. When agent view exits, that text is gone |
 | `Ctrl+C` | Clear the input; press twice to exit. While text on screen is selected, the press clears the selection instead, copying it first unless [selecting already copied it](https://code.claude.com/docs/en/settings-reference.md#copyonselect) |
+| `Ctrl+D` | Delete the character after the cursor. On Claude Code v2.1.311 or later, press twice on an empty dispatch input to exit |
 | `?` | Show shortcuts |
 
 The shortcuts that have an action in the [`Agents` context](https://code.claude.com/docs/en/keybindings#agents-actions) follow your [`keybindings.json`](https://code.claude.com/docs/en/keybindings). So does `Ctrl+G`, through the `Chat` context's `chat:externalEditor` binding.
@@ -429,7 +430,7 @@ A new session runs in the directory you opened agent view from. To target a diff
 * Open `claude agents` in a parent directory and mention a child repository with `@<repo>` in the prompt. Typing `@` lists these targets:
 
   * Git repositories one level below the launch directory
-  * The registered [git worktrees](https://code.claude.com/docs/en/worktrees.md) of the repository you launched from that live inside its directory tree, such as the ones Claude creates under `.claude/worktrees/`, labeled with their checked-out branch. Worktrees added outside the repository, such as with `git worktree add ../feature`, aren't listed
+  * The registered [git worktrees](https://code.claude.com/docs/en/worktrees.md) of the repository you launched from that live inside its directory tree, such as the ones Claude creates under `.claude/worktrees/`, labeled with their checked-out branch
   * Any directory that already has a session in the list
 
   A directory whose name contains a space isn't listed.
@@ -591,7 +592,7 @@ When you dispatch a background session from agent view or start one with `claude
 Claude skips the worktree when:
 
 * You [moved a session you already had open to the background](#from-inside-a-session) with `←` or `/background`. That session keeps editing files where it was already working
-* The session is already inside a linked git worktree, whether Claude created it under `.claude/worktrees/` or you created it with `git worktree add` somewhere else
+* The session is already inside a linked git worktree
 * The file that Claude is editing is inside a linked git worktree, such as one that the session or its subagent created with `git worktree add`
 * The working directory isn't a git repository and no [`WorktreeCreate` hook](https://code.claude.com/docs/en/hooks#worktreecreate) is configured
 * The write is outside the working directory

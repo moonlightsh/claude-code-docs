@@ -20,7 +20,7 @@ If you already saw an **LSP plugin recommendation** dialog, see [Accept or dismi
 
 ## Install a code intelligence plugin
 
-A code intelligence plugin tells Claude Code which command starts the language server and which file extensions it handles. It doesn't include the language server. Install the language server binary first, then the plugin, then confirm the server starts.
+A code intelligence plugin tells Claude Code which command starts the language server and which file extensions it handles. Install the language server binary first, then the plugin, then confirm the server starts.
 
 **1. Install the language server binary**
 
@@ -97,7 +97,7 @@ The **LSP plugin recommendation** dialog names the plugin and offers these choic
 
 * **Yes, install**: Claude Code installs the plugin for your user account and prints `<plugin> installed · restart to apply`. Start a new session to load the server.
 * **Not now**: the dialog closes, and a later session can offer the plugin again. Pressing **Esc** does the same.
-* **Never for this plugin**: the dialog stops appearing for that plugin and still appears for others.
+* **Never for this plugin**: the dialog stops appearing for that plugin.
 * **Disable all LSP recommendations**: the dialog stops appearing for every language.
 
 If you don't choose an option, Claude Code closes it after 30 seconds and counts that as ignored. The count is kept across sessions. After five ignored dialogs, Claude Code stops recommending plugins, the same as if you'd chosen **Disable all LSP recommendations**.

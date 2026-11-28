@@ -241,7 +241,7 @@ In a two-arm run, some graders are reported with `scored: false`. A check like "
 Three settings change that exclusion:
 
 * **Every grader excluded**: if every grader in a case is in the excluded set, they're scored normally instead, since there would be nothing left to score.
-* **`arm: both`**: set `arm: both` on a grader to score it in both arms regardless, which is what you want for a "must not invoke the skill" check with `min: 0` and `max: 0`.
+* **`arm: both`**: set `arm: both` on a grader to score it in both arms, which is what you want for a "must not invoke the skill" check with `min: 0` and `max: 0`.
 * **`--ablation none`**: under `--ablation none` nothing is excluded, so the same suite can produce a different absolute score in the two modes.
 
 ### Use a different eval directory

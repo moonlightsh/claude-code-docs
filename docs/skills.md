@@ -253,10 +253,10 @@ The checks run less often while the session is idle:
 
 The sync never delays startup, because Claude waits for a skill's download only when it invokes that skill. A short [non-interactive](https://code.claude.com/docs/en/headless.md) run can therefore finish before a newly added skill downloads, in which case a later session downloads it. To make a non-interactive run download your skills and wait for the list before it answers the prompt, set [`CLAUDE_CODE_SYNC_SKILLS`](https://code.claude.com/docs/en/env-vars#variables) to `1`. Before v2.1.273, terminal sessions downloaded them only in a `-p` run with this variable set.
 
-Claude Code syncs only in a session that signs in with your claude.ai account and [fetches feature flags from Anthropic](https://code.claude.com/docs/en/env-vars.md#features-that-need-feature-flag-fetching). It doesn't sync in these sessions:
+To sync without [`CLAUDE_CODE_SYNC_SKILLS`](https://code.claude.com/docs/en/env-vars#variables), a terminal session must [fetch feature flags](https://code.claude.com/docs/en/env-vars.md#features-that-need-feature-flag-fetching) and have a claude.ai `/login`. That automatic sync is off when a [profile or federation credential](https://code.claude.com/docs/en/authentication.md#anthropic-profiles-and-federation-credentials) ranks above your login or you set `ANTHROPIC_AUTH_TOKEN`, `CLAUDE_CODE_OAUTH_TOKEN`, or `apiKeyHelper`. With or without `CLAUDE_CODE_SYNC_SKILLS`, terminal sessions that don't sync include:
 
-* A session that doesn't use a sign-in stored by `/login`, such as one that authenticates with an API key, or one where `ANTHROPIC_AUTH_TOKEN`, `CLAUDE_CODE_OAUTH_TOKEN`, or an `apiKeyHelper` script supplies the credential
-* A session that doesn't fetch feature flags, such as one on Amazon Bedrock or one where you set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`
+* A session with only `CLAUDE_CODE_OAUTH_TOKEN` and no account in `~/.claude.json`, or with no claude.ai credential, such as one with only an API key
+* A [Claude apps gateway](https://code.claude.com/docs/en/claude-apps-gateway) session, one on a [third-party provider](https://code.claude.com/docs/en/third-party-integrations.md) such as Amazon Bedrock, or one where you set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`
 * A session in [bare mode](https://code.claude.com/docs/en/headless.md#start-faster-with-bare-mode) or one you start with `--safe-mode`
 * A session where managed settings [lock skills to plugin sources](https://code.claude.com/docs/en/settings-reference.md#strictpluginonlycustomization-skills), or one you start with a [`--setting-sources`](https://code.claude.com/docs/en/cli-reference#cli-flags) list that omits `user`
 
@@ -491,7 +491,7 @@ If a skill or custom command is missing from the `/` menu, or the menu doesn't s
 
 A custom command or skill doesn't load when Claude Code refuses its directory or file name. Rename that folder or file to remove the characters. A skill still loads when these characters are only in a plugin skill folder's name or in its frontmatter `name`:
 
-* **Folder in a plugin's `skills/` directory or its manifest's [`skills` paths](https://code.claude.com/docs/en/plugins/components#skills)**: you don't need to rename the folder. These characters become hyphens in the skill's command name, so type the command with the hyphens.
+* **Folder in a plugin's `skills/` directory or its manifest's [`skills` paths](https://code.claude.com/docs/en/plugins/components#skills)**: these characters become hyphens in the skill's command name, so type the command with the hyphens.
 * **Frontmatter `name`**: the `/` menu doesn't show the `name` value and typing it doesn't invoke the skill. Edit the `name:` line to remove the characters.
 
 To find out which name Claude Code refused, start it with [`claude --debug`](https://code.claude.com/docs/en/cli-reference#cli-flags) from your shell and search the [debug log](https://code.claude.com/docs/en/debug-your-config.md) for `[names]`. In an interactive session, a [startup notice](https://code.claude.com/docs/en/errors.md#skill-or-command-name-refused) also tells you that names were refused. After a rename or a `name:` edit, restart the session, unless the file is in a directory Claude Code [watches for changes](#live-change-detection).
